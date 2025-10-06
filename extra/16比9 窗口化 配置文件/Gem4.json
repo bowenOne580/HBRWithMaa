@@ -1,0 +1,121 @@
+{
+	"Gem4": {
+		"recognition": "OCR",
+		"expected": "start",
+		"replace": [["Start","start"],["开始行动","start"],["开始行","start"]],
+		"next": "T1Step1"
+	},
+	"T1Step1": {
+		"next": "T2Step1",
+		"recognition": "OCR",
+		"roi" : [985,515,165,165],
+		"expected": "start","replace": [["Start","start"],["开始行动","start"],["开始行","start"]],
+		"action": "Click",
+		"target": [1050,530,10,10],
+		"post_delay": 20000
+	},
+	"T2Step1": {
+		"next": "T2Step2",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [259,589,28,23]
+	},
+	"T2Step2": {
+		"next": "T2Step3",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [626,282,65,40]
+	},
+	"T2Step3": {
+		"next": "T2Step4",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [81,585,29,28]
+	},
+	"T2Step4": {
+		"next": "T3Step1",
+		"recognition": "OCR",
+		"roi" : [985,515,165,165],
+		"expected": "start","replace": [["Start","start"],["开始行动","start"],["开始行","start"]],
+		"action": "Click",
+		"target": [1050,530,10,10],
+		"post_delay": 20000
+	},
+	"T3Step1": {
+		"next": "T3Step2",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [81,585,29,28]
+	},
+	"T3Step2": {
+		"next": "T3Step3",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,175,41,32]
+	},
+	"T3Step3": {
+		"next": "T3Step4",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [259,589,28,23]
+	},
+	"T3Step4": {
+		"next": "T3Step5",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [626,282,65,40]
+	},
+	"T3Step5": {
+		"next": "T3Step6",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [81,585,29,28]
+	},
+	"T3Step6": {
+		"next": "T3Step7",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [432,588,24,22]
+	},
+	"T3Step7": {
+		"next": "T3Step8",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [626,282,65,40]
+	},
+	"T3Step8": {
+		"next": "T3Step9",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [81,585,29,28]
+	},
+	"T3Step9": {
+		"next": "T4Step1",
+		"recognition": "OCR",
+		"roi" : [985,515,165,165],
+		"expected": "start","replace": [["Start","start"],["开始行动","start"],["开始行","start"]],
+		"action": "Click",
+		"target": [1050,530,10,10],
+		"post_delay": 20000
+	},
+	"T4Step1": {
+		"next": "T4Step2",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [81,585,29,28]
+	},
+	"T4Step2": {
+		"next": "T4Step3",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [626,282,65,40]
+	},
+	"T4Step3": {
+		"recognition": "OCR",
+		"roi" : [985,515,165,165],
+		"expected": "start","replace": [["Start","start"],["开始行动","start"],["开始行","start"]],
+		"action": "Click",
+		"target": [1050,530,10,10],
+		"post_delay": 20000
+	}
+}

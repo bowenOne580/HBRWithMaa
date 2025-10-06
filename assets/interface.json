@@ -1,80 +1,1631 @@
 {
+    "name": "Maa-HBR",
+    "version": "v0.5.9",
+    "url": "https://github.com/KarylDAZE/Maa-HBR",
+    "custom_title": "Maa-HBR",
+    "mirrorchyan_rid": "Maa-HBR",
+    "default_controller": "adb",
     "controller": [
         {
             "name": "安卓端",
             "type": "Adb"
         },
         {
-            "name": "桌面端",
+            "name": "PC端",
             "type": "Win32",
             "win32": {
                 "class_regex": ".*",
-                "window_regex": "Visual Studio"
+                "window_regex": "HeavenBurnsRed",
+                "input": 1,
+                "screencap": 2
             }
         }
     ],
     "resource": [
         {
-            "name": "官服",
+            "name": "Bilibili服",
             "path": [
                 "{PROJECT_DIR}/resource"
             ]
-        },
-        {
-            "name": "B 服",
-            "path": [
-                "{PROJECT_DIR}/resource",
-                "{PROJECT_DIR}/resource_bilibili"
-            ]
         }
     ],
-    "agent_demo": {
-        "child_exec": "python",
-        "child_args": [
-            "{PROJECT_DIR}/agent/main.py"
-        ]
-    },
     "task": [
         {
-            "name": "普通任务",
-            "entry": "MyTask1"
+            "name": "自定义任务",
+            "entry": "AddAP",
+            "check": true
         },
         {
-            "name": "选项任务",
-            "entry": "MyTask2",
-            "option": [
-                "任务选项1"
-            ]
+            "name": "启动游戏",
+            "entry": "StartHBR",
+            "check": true,
+            "doc": "启动游戏(若原本未启动)。\n注：无法通过此任务启动PC端HBR。若需要启动PC端HBR请在设置-启动设置中进行相关设定"
         },
         {
-            "name": "参数任务",
-            "entry": "MyTask3",
+            "name": "回到主页",
+            "entry": "GoBackHomepage",
+            "check": true,
+            "doc": "启动游戏后必须回到主页，才能正常执行其他任务。"
+        },
+        {
+            "name": "棱镜战",
+            "entry": "StartBattle",
             "option": [
-                "任务选项1"
+                "棱镜战boss",
+                "消耗体力/入场券",
+                "消耗数量",
+                "选择队伍",
+                "选择行动轴"
             ],
-            "pipeline_override": {}
+            "pipeline_override": {
+                "SelectStageType": {
+                    "expected": "棱镜战",
+                    "roi": [
+                        724,
+                        517,
+                        103,
+                        45
+                    ]
+                }
+            },
+            "check": false,
+            "repeatable": true,
+            "repeat_count": 1,
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
         },
         {
-            "name": "带Custom的任务",
-            "entry": "MyTask4"
+            "name": "宝石棱镜战",
+            "entry": "StartBattle",
+            "option": [
+                "宝石棱镜战boss",
+                "消耗体力/入场券",
+                "消耗数量",
+                "选择队伍",
+                "选择行动轴"
+            ],
+            "pipeline_override": {
+                "SelectStageType": {
+                    "expected": "宝石棱镜战"
+                }
+            },
+            "check": false,
+            "repeatable": true,
+            "repeat_count": 1,
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
+        },
+        {
+            "name": "光球BOSS",
+            "entry": "StartBattle",
+            "option": [
+                "光球boss",
+                "光球boss难度",
+                "消耗体力/入场券",
+                "消耗数量",
+                "选择队伍",
+                "选择行动轴"
+            ],
+            "pipeline_override": {
+                "SelectStageType": {
+                    "expected": "光球BOSS",
+                    "next": "SelectOrbBossType"
+                }
+            },
+            "check": false,
+            "repeatable": true,
+            "repeat_count": 1,
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
+        },
+        {
+            "name": "当期活动棱镜战",
+            "entry": "StartBattle",
+            "option": [
+                "消耗体力/入场券",
+                "消耗数量",
+                "选择队伍",
+                "选择行动轴"
+            ],
+            "pipeline_override": {
+                "StartBattle": {
+                    "next": "Event"
+                }
+            },
+            "check": false,
+            "repeatable": true,
+            "repeat_count": 1,
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
+        },
+        {
+            "name": "精选活动棱镜战",
+            "entry": "StartBattle",
+            "option": [
+                "第几个精选活动",
+                "消耗体力/入场券",
+                "消耗数量",
+                "选择队伍",
+                "选择行动轴"
+            ],
+            "pipeline_override": {
+                "StartBattle": {
+                    "next": "Event"
+                },
+                "SelectEvent": {
+                    "roi": [
+                        451,
+                        57,
+                        331,
+                        86
+                    ],
+                    "expected": [
+                        "开放中",
+                        "精选"
+                    ]
+                }
+            },
+            "check": false,
+            "repeatable": true,
+            "repeat_count": 1,
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。\n若选择消耗备用体力，会在剩余体力耗尽后使用备用体力"
+        },
+        {
+            "name": "每日免费扭蛋",
+            "entry": "Lottery",
+            "check": true,
+            "repeatable": true,
+            "repeat_count": 1,
+            "doc": "需要设置为不小于当前存在免费扭蛋次数的卡池数。例如有2个卡池有免费扭蛋次数，则至少设置为2。"
+        },
+        {
+            "name": "领取礼物",
+            "entry": "Gift",
+            "check": true
+        },
+        {
+            "name": "领取任务奖励",
+            "entry": "Mission",
+            "check": true
+        },
+        {
+            "name": "领取每周免费礼包",
+            "entry": "WeeklyFreeGift",
+            "check": true
+        },
+        {
+            "name": "剧情迷宫挂机",
+            "entry": "MainStory",
+            "option": [
+                "选择队伍",
+                "选择剧情迷宫"
+            ],
+            "pipeline_override": {
+                "Menu": {
+                    "next": "UnitButton"
+                }
+            },
+            "check": false,
+            "doc": "迷宫挂机刷取溶液或提升技能等级"
+        },
+        {
+            "name": "竞技场",
+            "entry": "MainStory",
+            "option": [
+                "选择队伍",
+                "挂机方式",
+                "选择竞技场关卡"
+            ],
+            "pipeline_override": {
+                "SelectStageType": {
+                    "expected": "竞技场",
+                    "interrupt": [
+                        "SkipStory",
+                        "SwipeDown"
+                    ],
+                    "next": "SelectLevel"
+                },
+                "SelectLevel": {
+                    "next": "ChallengeSetting"
+                },
+                "StartFight": {
+                    "next": "UnitList"
+                },
+                "SwipeDown": {
+                    "recognition": "OCR",
+                    "expected": "请选择训练项目"
+                }
+            },
+            "check": false,
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。v0.4.0版本开始，离线挂机不会自动退出游戏。"
+        },
+        {
+            "name": "时之修炼场",
+            "entry": "StartBattle",
+            "option": [
+                "选择队伍",
+                "挂机方式"
+            ],
+            "pipeline_override": {
+                "SelectStageType": {
+                    "expected": "时之修炼场",
+                    "next": "ChallengeSetting"
+                }
+            },
+            "check": false,
+            "doc": "队伍名称需包含队伍序号(01-20),小于10的队伍序号需带前导0。如:03时之修炼场,12宝石棱镜战。v0.4.0版本开始，离线挂机不会自动退出游戏。"
+        },
+        {
+            "name": "技术模拟战",
+            "entry": "StartCasual",
+            "option": [
+                "选择队伍",
+                "选择技术模拟战关卡"
+            ],
+            "pipeline_override": {
+                "hasSelectedUnit": {
+                    "interrupt": "GoBack",
+                    "next": "StartArtsBattle"
+                },
+                "SelectUnit": {
+                    "post_wait_freezes": 1000,
+                    "interrupt": "GoBack",
+                    "next": "StartArtsBattle"
+                }
+            },
+            "doc": "建议在技术模拟战前，先执行竞技场或时之修炼场离线挂机，充分获取收益"
+        },
+        {
+            "name": "退出游戏(安卓端)",
+            "entry": "EndHBR"
+        },
+        {
+            "name": "退出游戏(PC端)",
+            "entry": "EndHBR_PC"
         }
     ],
     "option": {
-        "任务选项1": {
+        "选择行动轴": {
             "cases": [
                 {
-                    "name": "文本1",
-                    "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本1"
+                    "name": "AUTO"
+                },
+                {
+                    "name": "轴1",
+                    "pipeline_override":{
+                        "Sally": {
+                            "interrupt": [
+                                "OK",
+                                "Line1",
+                                "ClickScreen",
+                                "EndFight",
+                                "GiveUp",
+                                "GoBack",
+                                "HomepageButton",
+                                "SkipTimeLimitShop"
+                            ]
                         }
                     }
                 },
                 {
-                    "name": "文本2",
+                    "name": "轴2",
+                    "pipeline_override":{
+                        "Sally": {
+                            "interrupt": [
+                                "OK",
+                                "Line2",
+                                "ClickScreen",
+                                "EndFight",
+                                "GiveUp",
+                                "GoBack",
+                                "HomepageButton",
+                                "SkipTimeLimitShop"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "轴3",
+                    "pipeline_override":{
+                        "Sally": {
+                            "interrupt": [
+                                "OK",
+                                "Gem4",
+                                "ClickScreen",
+                                "EndFight",
+                                "GiveUp",
+                                "GoBack",
+                                "HomepageButton",
+                                "SkipTimeLimitShop"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "棱镜战boss": {
+            "cases": [
+                {
+                    "name": "深渊重锤",
                     "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本2"
+                        "SelectBoss": {
+                            "expected": "深渊重锤"
+                        }
+                    }
+                },
+                {
+                    "name": "钻石眼魔",
+                    "pipeline_override": {
+                        "SelectBoss": {
+                            "expected": "钻石眼魔"
+                        }
+                    }
+                },
+                {
+                    "name": "针嘴鸟",
+                    "pipeline_override": {
+                        "SelectBoss": {
+                            "expected": "针嘴鸟"
+                        }
+                    }
+                }
+            ]
+        },
+        "宝石棱镜战boss": {
+            "cases": [
+                {
+                    "name": "群山重锤",
+                    "pipeline_override": {
+                        "SelectBoss": {
+                            "expected": "群山重锤"
+                        }
+                    }
+                },
+                {
+                    "name": "冰雹马",
+                    "pipeline_override": {
+                        "SelectBoss": {
+                            "expected": "冰雹马"
+                        }
+                    }
+                },
+                {
+                    "name": "石柱像T",
+                    "pipeline_override": {
+                        "SelectBoss": {
+                            "expected": "石柱像T"
+                        }
+                    }
+                },
+                {
+                    "name": "坚甲皓珠",
+                    "pipeline_override": {
+                        "SelectBoss": {
+                            "expected": "坚甲皓珠"
+                        }
+                    }
+                },
+                {
+                    "name": "掩面死神O",
+                    "pipeline_override": {
+                        "SelectBoss": {
+                            "expected": "掩面死神O"
+                        }
+                    }
+                },
+                {
+                    "name": "阿拉克尼巨蛛A",
+                    "pipeline_override": {
+                        "SelectBoss": {
+                            "expected": "阿拉克尼巨蛛A"
+                        }
+                    }
+                }
+            ]
+        },
+        "光球boss": {
+            "cases": [
+                {
+                    "name": "暴击光球-异度监测之眼R",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                172,
+                                115,
+                                155,
+                                25
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "异度监测之眼R"
+                        }
+                    }
+                },
+                {
+                    "name": "复活光球-异度监测之眼B",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                172,
+                                115,
+                                155,
+                                25
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "异度监测之眼B"
+                        }
+                    }
+                },
+                {
+                    "name": "驱动光球-异度监测之眼Y",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                172,
+                                115,
+                                155,
+                                25
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "异度监测之眼Y"
+                        }
+                    }
+                },
+                {
+                    "name": "防护光球-异度监测之眼W",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                172,
+                                115,
+                                155,
+                                25
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "异度监测之眼W"
+                        }
+                    }
+                },
+                {
+                    "name": "强攻光球-异度监测之眼P",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                172,
+                                115,
+                                155,
+                                25
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "异度监测之眼P"
+                        }
+                    }
+                },
+                {
+                    "name": "集中光球-空无R",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                569,
+                                114,
+                                139,
+                                28
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "空无R"
+                        }
+                    }
+                },
+                {
+                    "name": "填充光球-空无B",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                569,
+                                114,
+                                139,
+                                28
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "空无B"
+                        }
+                    }
+                },
+                {
+                    "name": "治愈光球-空无Y",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                569,
+                                114,
+                                139,
+                                28
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "空无Y"
+                        }
+                    }
+                },
+                {
+                    "name": "软化光球-空无W",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                569,
+                                114,
+                                139,
+                                28
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "空无W"
+                        }
+                    }
+                },
+                {
+                    "name": "衰灭光球-空无P",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                569,
+                                114,
+                                139,
+                                28
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "空无P"
+                        }
+                    }
+                },
+                {
+                    "name": "阿蒙之门R",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                954,
+                                111,
+                                136,
+                                31
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "阿蒙之门R"
+                        }
+                    }
+                },
+                {
+                    "name": "阿蒙之门B",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                954,
+                                111,
+                                136,
+                                31
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "阿蒙之门B"
+                        }
+                    }
+                },
+                {
+                    "name": "阿蒙之门Y",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                954,
+                                111,
+                                136,
+                                31
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "阿蒙之门Y"
+                        }
+                    }
+                },
+                {
+                    "name": "阿蒙之门W",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                954,
+                                111,
+                                136,
+                                31
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "阿蒙之门W"
+                        }
+                    }
+                },
+                {
+                    "name": "阿蒙之门P",
+                    "pipeline_override": {
+                        "SelectOrbBossType": {
+                            "target": [
+                                954,
+                                111,
+                                136,
+                                31
+                            ]
+                        },
+                        "SelectOrbBoss": {
+                            "expected": "阿蒙之门P"
+                        }
+                    }
+                }
+            ]
+        },
+        "光球boss难度": {
+            "cases": [
+                {
+                    "name": "Lv.1",
+                    "pipeline_override": {
+                        "HasSelectedOrbLevel": {
+                            "expected": "1"
+                        }
+                    }
+                },
+                {
+                    "name": "Lv.2",
+                    "pipeline_override": {
+                        "HasSelectedOrbLevel": {
+                            "expected": "2"
+                        }
+                    }
+                },
+                {
+                    "name": "Lv.3",
+                    "pipeline_override": {
+                        "HasSelectedOrbLevel": {
+                            "expected": "3"
+                        }
+                    }
+                },
+                {
+                    "name": "Lv.4",
+                    "pipeline_override": {
+                        "HasSelectedOrbLevel": {
+                            "expected": "4"
+                        }
+                    }
+                }
+            ],
+            "default_case": "Lv.4"
+        },
+        "消耗数量": {
+            "cases": [
+                {
+                    "name": "清空剩余体力",
+                    "pipeline_override": {
+                        "UseAPOrTickets": {
+                            "next": [
+                                "ZeroAP",
+                                "ClearAP",
+                                "APOK"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "1",
+                    "pipeline_override": {
+                        "UseAPOrTickets": {
+                            "next": "APOK"
+                        },
+                        "ConsumeNAPs": {
+                            "expected": "1"
+                        }
+                    }
+                },
+                {
+                    "name": "2",
+                    "pipeline_override": {
+                        "ConsumeNAPs": {
+                            "expected": "2"
+                        }
+                    }
+                },
+                {
+                    "name": "3",
+                    "pipeline_override": {
+                        "ConsumeNAPs": {
+                            "expected": "3"
+                        }
+                    }
+                },
+                {
+                    "name": "4",
+                    "pipeline_override": {
+                        "ConsumeNAPs": {
+                            "expected": "4"
+                        }
+                    }
+                },
+                {
+                    "name": "5",
+                    "pipeline_override": {
+                        "ConsumeNAPs": {
+                            "expected": "5"
+                        }
+                    }
+                }
+            ]
+        },
+        "选择队伍": {
+            "cases": [
+                {
+                    "name": "1",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "01"
+                        },
+                        "SelectUnit": {
+                            "expected": "01"
+                        }
+                    }
+                },
+                {
+                    "name": "2",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "02"
+                        },
+                        "SelectUnit": {
+                            "expected": "02"
+                        }
+                    }
+                },
+                {
+                    "name": "3",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "03"
+                        },
+                        "SelectUnit": {
+                            "expected": "03"
+                        }
+                    }
+                },
+                {
+                    "name": "4",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "04"
+                        },
+                        "SelectUnit": {
+                            "expected": "04"
+                        }
+                    }
+                },
+                {
+                    "name": "5",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "05"
+                        },
+                        "SelectUnit": {
+                            "expected": "05"
+                        }
+                    }
+                },
+                {
+                    "name": "6",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "06"
+                        },
+                        "SelectUnit": {
+                            "expected": "06"
+                        }
+                    }
+                },
+                {
+                    "name": "7",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "07"
+                        },
+                        "SelectUnit": {
+                            "expected": "07"
+                        }
+                    }
+                },
+                {
+                    "name": "8",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "08"
+                        },
+                        "SelectUnit": {
+                            "expected": "08"
+                        }
+                    }
+                },
+                {
+                    "name": "9",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "09"
+                        },
+                        "SelectUnit": {
+                            "expected": "09"
+                        }
+                    }
+                },
+                {
+                    "name": "10",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "10"
+                        },
+                        "SelectUnit": {
+                            "expected": "10"
+                        }
+                    }
+                },
+                {
+                    "name": "11",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "11"
+                        },
+                        "SelectUnit": {
+                            "expected": "11"
+                        }
+                    }
+                },
+                {
+                    "name": "12",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "12"
+                        },
+                        "SelectUnit": {
+                            "expected": "12"
+                        }
+                    }
+                },
+                {
+                    "name": "13",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "13"
+                        },
+                        "SelectUnit": {
+                            "expected": "13"
+                        }
+                    }
+                },
+                {
+                    "name": "14",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "14"
+                        },
+                        "SelectUnit": {
+                            "expected": "14"
+                        }
+                    }
+                },
+                {
+                    "name": "15",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "15"
+                        },
+                        "SelectUnit": {
+                            "expected": "15"
+                        }
+                    }
+                },
+                {
+                    "name": "16",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "16"
+                        },
+                        "SelectUnit": {
+                            "expected": "16"
+                        }
+                    }
+                },
+                {
+                    "name": "17",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "17"
+                        },
+                        "SelectUnit": {
+                            "expected": "17"
+                        }
+                    }
+                },
+                {
+                    "name": "18",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "18"
+                        },
+                        "SelectUnit": {
+                            "expected": "18"
+                        }
+                    }
+                },
+                {
+                    "name": "19",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "19"
+                        },
+                        "SelectUnit": {
+                            "expected": "19"
+                        }
+                    }
+                },
+                {
+                    "name": "20",
+                    "pipeline_override": {
+                        "hasSelectedUnit": {
+                            "expected": "20"
+                        },
+                        "SelectUnit": {
+                            "expected": "20"
+                        }
+                    }
+                }
+            ]
+        },
+        "挂机方式": {
+            "cases": [
+                {
+                    "name": "离线挂机",
+                    "pipeline_override": {
+                        "Sally": {
+                            "next": "PowerSavingMode"
+                        },
+                        "ChallengeSetting": {
+                            "next": [
+                                "PowerSavingSweep",
+                                "StartFight"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "在线挂机",
+                    "pipeline_override": {
+                        "EndFight": {
+                            "next": "FightAgainLoop"
+                        }
+                    }
+                }
+            ]
+        },
+        "选择竞技场关卡": {
+            "cases": [
+                {
+                    "name": "高级1（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：7,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级1（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：7,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级1（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：7,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级2（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：8,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级2（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：8,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级2（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：8,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级3（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：10,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级3（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：10,500"
+                        }
+                    }
+                },
+                {
+                    "name": "高级3（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：10,500"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级1（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：11,500"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级1（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：11,500"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级1（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：11,500"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级2（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：12,300"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级2（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：12,300"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级2（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：12,300"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级3（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：12,800"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级3（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：12,800"
+                        }
+                    }
+                },
+                {
+                    "name": "超高级3（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：12,800"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级1（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：13,200"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级1（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：13,200"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级1（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：13,200"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级2（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：14,500"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级2（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：14,500"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级2（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：14,500"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级3（斩）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                898,
+                                310,
+                                340,
+                                131
+                            ],
+                            "expected": "推荐战力：15,300"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级3（突）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                901,
+                                441,
+                                262,
+                                96
+                            ],
+                            "expected": "推荐战力：15,300"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级3（打）",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "roi": [
+                                907,
+                                549,
+                                255,
+                                120
+                            ],
+                            "expected": "推荐战力：15,300"
+                        }
+                    }
+                },
+                {
+                    "name": "绝级4",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "expected": "等级4",
+                            "target_offset": [
+                                562,
+                                21,
+                                -10,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "特别训练1",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "expected": "推荐战力：15,800"
+                        }
+                    }
+                },
+                {
+                    "name": "特别训练2",
+                    "pipeline_override": {
+                        "SelectLevel": {
+                            "expected": "推荐战力：17,000"
+                        }
+                    }
+                }
+            ]
+        },
+        "选择剧情迷宫": {
+            "cases": [
+                {
+                    "name": "主线第二章Day25 4:00",
+                    "pipeline_override": {
+                        "SelectStageType": {
+                            "expected": "追溯过去",
+                            "interrupt": [
+                                "PreviousStory",
+                                "NextStory"
+                            ],
+                            "next": "SelectStory"
+                        },
+                        "SelectStory": {
+                            "expected": "第二章"
+                        },
+                        "PreviousStory": {
+                            "expected": [
+                                "第三章",
+                                "第四章",
+                                "第五章"
+                            ]
+                        },
+                        "NextStory": {
+                            "expected": [
+                                "序章",
+                                "第一章"
+                            ]
+                        },
+                        "SelectDay": {
+                            "expected": "25"
+                        },
+                        "SelectTime": {
+                            "expected": "4:00"
+                        },
+                        "PreviousTime": {
+                            "recognition": "DirectHit"
+                        },
+                        "SelectUnit": {
+                            "interrupt": [
+                                "GoBack",
+                                "ExitMenu"
+                            ],
+                            "next": "NextTimePeriod"
+                        }
+                    }
+                }
+            ]
+        },
+        "消耗体力/入场券": {
+            "cases": [
+                {
+                    "name": "体力",
+                    "pipeline_override": {
+                        "UseAPOrTickets": {
+                            "expected": "体力"
+                        }
+                    }
+                },
+                {
+                    "name": "备用体力",
+                    "pipeline_override": {
+                        "UseAPOrTickets": {
+                            "expected": "体力"
+                        },
+                        "ConsumeAPStones": {
+                            "expected": "消耗备用体力"
+                        }
+                    }
+                },
+                {
+                    "name": "入场券",
+                    "pipeline_override": {
+                        "UseAPOrTickets": {
+                            "expected": "入场券"
+                        }
+                    }
+                }
+            ]
+        },
+        "第几个精选活动": {
+            "cases": [
+                {
+                    "name": "1",
+                    "pipeline_override": {
+                        "SelectEvent": {
+                            "target_offset": [
+                                100,
+                                150,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2",
+                    "pipeline_override": {
+                        "SelectEvent": {
+                            "target_offset": [
+                                300,
+                                150,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3",
+                    "pipeline_override": {
+                        "SelectEvent": {
+                            "target_offset": [
+                                500,
+                                150,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "选择技术模拟战关卡": {
+            "cases": [
+                {
+                    "name": "31A 普通",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31A\\]普通"
+                        }
+                    }
+                },
+                {
+                    "name": "31A 困难",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31A\\]困难"
+                        }
+                    }
+                },
+                {
+                    "name": "31B 普通",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31B\\]普通"
+                        }
+                    }
+                },
+                {
+                    "name": "31B 困难",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31B\\]困难"
+                        }
+                    }
+                },
+                {
+                    "name": "31C 普通",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31C\\]普通"
+                        }
+                    }
+                },
+                {
+                    "name": "31C 困难",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31C\\]困难"
+                        }
+                    }
+                },
+                {
+                    "name": "31E 普通",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31E\\]普通"
+                        }
+                    }
+                },
+                {
+                    "name": "31E 困难",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[31E\\]困难"
+                        }
+                    }
+                },
+                {
+                    "name": "MIX 困难",
+                    "pipeline_override": {
+                        "SelectArtsBattleLevel": {
+                            "expected": "\\[MIX\\]困难"
+                        }
+                    }
+                },
+                {
+                    "name": "无尽模式",
+                    "pipeline_override": {
+                        "SelectArtsBattleMode": {
+                            "next": "SelectArtsBattleEndless"
+                        },
+                        "SelectArtsBattleLevel": {
+                            "expected": "无尽模式"
                         }
                     }
                 }

@@ -1,0 +1,77 @@
+{
+    "MyTask1": {
+        "next": ["T1Step1"]
+    },
+    "Action": {
+        "recognition": "TemplateMatch",
+        "roi" : [1000,517,210,162],
+        "template": ["Action.png"],
+        "action": "Click",
+        "target": [1050,530,10,10],
+        "post_delay": 20000
+    },
+    "Skill1": {
+        "action": "Click",
+        "post_delay": 300,
+        "target": [670,175,41,32]
+    },
+    "Skill2": {
+        "action": "Click",
+        "post_delay": 300,
+        "target": [626,282,65,40]
+    },
+    "Skill3": {
+        "action": "Click",
+        "post_delay": 300,
+        "target": [616,390,56,36]
+    },
+    "Style1": {
+        "action": "Click",
+        "post_delay": 600,
+        "target": [81,585,29,28]
+    },
+    "Style2": {
+        "action": "Click",
+        "post_delay": 300,
+        "target": [259,589,28,23]
+    },
+    "Style3": {
+        "action": "Click",
+        "post_delay": 300,
+        "target": [432,588,24,22]
+    },
+    "Style4": {
+        "action": "Click",
+        "post_delay": 300,
+        "target": [598,590,21,22]
+    },
+    "Style5": {
+        "action": "Click",
+        "post_delay": 300,
+        "target": [738,591,26,26]
+    },
+    "Style6": {
+        "action": "Click",
+        "post_delay": 300,
+        "target": [888,590,24,24]
+    },
+    "MyTask2": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "post_delay": 300,
+        "target": "true"
+    },
+    "GiveUp": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "放弃"
+    },
+    "MyTask3": {},
+    "MyTask4": {
+        "recognition": "Custom",
+        "custom_recognition": "my_reco_222",
+        "action": "Custom",
+        "custom_action": "my_action_111"
+    }
+}
