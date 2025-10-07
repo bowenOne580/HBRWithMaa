@@ -1,10 +1,9 @@
 {
-    "name": "Maa-HBR",
-    "version": "v0.5.9",
-    "url": "https://github.com/KarylDAZE/Maa-HBR",
-    "custom_title": "Maa-HBR",
-    "mirrorchyan_rid": "Maa-HBR",
-    "default_controller": "adb",
+    "name": "HBRWithMaa",
+    "version": "v0.2.1",
+    "url": "https://github.com/bowenOne580/HBRWithMaa",
+    "custom_title": "HBRWithMaa",
+    "default_controller": "win32",
     "controller": [
         {
             "name": "安卓端",
