@@ -34,6 +34,11 @@ def install_deps():
         install_path / "MaaAgentBinary",
         dirs_exist_ok=True,
     )
+    shutil.copytree(
+        working_dir / "tools",
+        install_path / "tools",
+        dirs_exist_ok=True,
+    )
 
 
 def install_resource():
