@@ -1,0 +1,68 @@
+{
+	"Gem4": {
+		"recognition": "TemplateMatch",
+		"roi" : [1050,515,213,155],
+		"template": ["Action.png"],
+		"target": [1150,580,10,10],
+		"post_delay": 3000,
+		"next": "Gem4_T1Step1"
+	},
+	"Gem4_T1Step1": {
+		"next": "Gem4_T1Step2",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,516,213,155],
+		"template": ["Action.png"],
+		"pre_delay": 3000,
+		"target": [1150,580,10,10]
+	},
+	"Gem4_T1Step2": {
+		"next": "Gem4_T1Step3",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [100,585,29,28]
+	},
+	"Gem4_T1Step3": {
+		"next": "Gem4_T1Step4",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,175,41,32]
+	},
+	"Gem4_T1Step4": {
+		"next": "Gem4_T1Step5",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [300,589,28,23]
+	},
+	"Gem4_T1Step5": {
+		"next": "Gem4_T1Step6",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,175,41,32]
+	},
+	"Gem4_T1Step6": {
+		"next": "Gem4_T1Step7",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [500,588,24,22]
+	},
+	"Gem4_T1Step7": {
+		"next": "Gem4_T1Step8",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [626,282,65,40]
+	},
+	"Gem4_T1Step8": {
+		"next": "Gem4_T1Step9",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [100,585,29,28]
+	},
+	"Gem4_T1Step9": {
+		"recognition": "TemplateMatch",
+		"roi" : [1050,515,213,155],
+		"template": ["Action.png"],
+		"action": "Click",
+		"target": [1150,580,10,10],
+		"post_delay": 3000
+	}
+}

@@ -51,7 +51,7 @@ jobs:
 
   install:
     needs: meta
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         os: [win, macos, linux, android]
@@ -110,7 +110,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: HBRWithMaa-${{ matrix.os }}-${{ matrix.arch }}
+          name: MaaXXX-${{ matrix.os }}-${{ matrix.arch }}
           path: "install"
 
   changelog:
@@ -148,7 +148,7 @@ jobs:
           for f in *; do
             (cd $f && zip -r ../$f-${{ needs.meta.outputs.tag }}.zip .)
           done
-
+          
       - uses: softprops/action-gh-release@v2
         with:
           files: assets/*

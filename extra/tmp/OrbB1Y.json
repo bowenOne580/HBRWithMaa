@@ -1,0 +1,234 @@
+{
+	"OrbB1Y": {
+		"recognition": "TemplateMatch",
+		"roi" : [1050,515,213,155],
+		"template": ["Action.png"],
+		"target": [1150,580,10,10],
+		"post_delay": 3000,
+		"next": "OrbB1Y_T1Step1"
+	},
+	"OrbB1Y_T1Step1": {
+		"next": "OrbB1Y_T1Step2",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,516,213,155],
+		"template": ["Action.png"],
+		"pre_delay": 3000,
+		"target": [1150,580,10,10]
+	},
+	"OrbB1Y_T1Step2": {
+		"next": "OrbB1Y_T1Step3",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [300,589,28,23]
+	},
+	"OrbB1Y_T1Step3": {
+		"next": "OrbB1Y_T1Step4",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [840,591,26,26]
+	},
+	"OrbB1Y_T1Step4": {
+		"next": "OrbB1Y_T1Step5",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [500,588,24,22]
+	},
+	"OrbB1Y_T1Step5": {
+		"next": "OrbB1Y_T1Step6",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,175,41,32]
+	},
+	"OrbB1Y_T1Step6": {
+		"next": "OrbB1Y_T1Step7",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [1000,590,24,24]
+	},
+	"OrbB1Y_T1Step7": {
+		"next": "OrbB1Y_T1Step8",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [300,589,28,23]
+	},
+	"OrbB1Y_T1Step8": {
+		"next": "OrbB1Y_T1Step9",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,175,41,32]
+	},
+	"OrbB1Y_T1Step9": {
+		"next": "OrbB1Y_T2Step1",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,515,213,155],
+		"template": ["Action.png"],
+		"action": "Click",
+		"target": [1150,580,10,10],
+		"post_delay": 3000
+	},
+	"OrbB1Y_T2Step1": {
+		"next": "OrbB1Y_T2Step2",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,516,213,155],
+		"template": ["Action.png"],
+		"pre_delay": 3000,
+		"target": [1150,580,10,10]
+	},
+	"OrbB1Y_T2Step2": {
+		"next": "OrbB1Y_T2Step3",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [300,589,28,23]
+	},
+	"OrbB1Y_T2Step3": {
+		"next": "OrbB1Y_T2Step4",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [840,591,26,26]
+	},
+	"OrbB1Y_T2Step4": {
+		"next": "OrbB1Y_T2Step5",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [100,585,29,28]
+	},
+	"OrbB1Y_T2Step5": {
+		"next": "OrbB1Y_T2Step6",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,175,41,32]
+	},
+	"OrbB1Y_T2Step6": {
+		"next": "OrbB1Y_T2Step7",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [300,589,28,23]
+	},
+	"OrbB1Y_T2Step7": {
+		"next": "OrbB1Y_T2Step8",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,175,41,32]
+	},
+	"OrbB1Y_T2Step8": {
+		"next": "OrbB1Y_T2Step9",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [1000,590,24,24]
+	},
+	"OrbB1Y_T2Step9": {
+		"next": "OrbB1Y_T2Step10",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [500,588,24,22]
+	},
+	"OrbB1Y_T2Step10": {
+		"next": "OrbB1Y_T2Step11",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,175,41,32]
+	},
+	"OrbB1Y_T2Step11": {
+		"next": "OrbB1Y_T2Step12",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [1000,590,24,24]
+	},
+	"OrbB1Y_T2Step12": {
+		"next": "OrbB1Y_T3Step1",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,515,213,155],
+		"template": ["Action.png"],
+		"action": "Click",
+		"target": [1150,580,10,10],
+		"post_delay": 3000
+	},
+	"OrbB1Y_T3Step1": {
+		"next": "OrbB1Y_T3Step2",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,516,213,155],
+		"template": ["Action.png"],
+		"pre_delay": 3000,
+		"target": [1150,580,10,10]
+	},
+	"OrbB1Y_T3Step2": {
+		"next": "OrbB1Y_T3Step3",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [100,585,29,28]
+	},
+	"OrbB1Y_T3Step3": {
+		"next": "OrbB1Y_T3Step4",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,590,21,22]
+	},
+	"OrbB1Y_T3Step4": {
+		"next": "OrbB1Y_T3Step5",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [100,585,29,28]
+	},
+	"OrbB1Y_T3Step5": {
+		"next": "OrbB1Y_T3Step6",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [100,585,29,28]
+	},
+	"OrbB1Y_T3Step6": {
+		"next": "OrbB1Y_T3Step7",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [300,589,28,23]
+	},
+	"OrbB1Y_T3Step7": {
+		"next": "OrbB1Y_T3Step8",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [1000,590,24,24]
+	},
+	"OrbB1Y_T3Step8": {
+		"next": "OrbB1Y_T3Step9",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [300,589,28,23]
+	},
+	"OrbB1Y_T3Step9": {
+		"next": "OrbB1Y_T3Step10",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [300,589,28,23]
+	},
+	"OrbB1Y_T3Step10": {
+		"next": "OrbB1Y_T3Step11",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [100,585,29,28]
+	},
+	"OrbB1Y_T3Step11": {
+		"next": "OrbB1Y_T3Step12",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,175,41,32]
+	},
+	"OrbB1Y_T3Step12": {
+		"next": "OrbB1Y_T3Step13",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [300,589,28,23]
+	},
+	"OrbB1Y_T3Step13": {
+		"next": "OrbB1Y_T3Step14",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,175,41,32]
+	},
+	"OrbB1Y_T3Step14": {
+		"recognition": "TemplateMatch",
+		"roi" : [1050,515,213,155],
+		"template": ["Action.png"],
+		"action": "Click",
+		"target": [1150,580,10,10],
+		"post_delay": 3000
+	}
+}
