@@ -1,11 +1,9 @@
 {
-    "name": "HBRWithMaa",
-    "version": "v0.2.1",
-    "mirrorchyan_rid":  "null",
-    "mirrorchyan_multiplatform":  false,
-    "url": "https://github.com/bowenOne580/HBRWithMaa",
-    "custom_title": "HBRWithMaa",
-    "default_controller": "win32",
+    "name": "Maa-HBR",
+    "version": "v0.5.9",
+    "url": "https://github.com/KarylDAZE/Maa-HBR",
+    "custom_title": "Maa-HBR",
+    "mirrorchyan_rid": "Maa-HBR",
     "controller": [
         {
             "name": "PC端",

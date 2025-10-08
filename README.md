@@ -2,13 +2,25 @@
 
 ## 介绍
 
-本项目的大部分 `json` 文件是基于 [KarylDAZE/Maa-HBR: heaven burns red 炽焰天穹 自动化脚本](https://github.com/KarylDAZE/Maa-HBR) 修改而来，仅在保留原有功能的同时，加入了自定义战斗逻辑（排轴）的功能。使用本软件（即 HBRWithMaa），你可以在战斗时使用自己预先设定的轴。
+本项目的大部分 `json` 文件是基于 [KarylDAZE/Maa-HBR: heaven burns red 炽焰天穹 自动化脚本](https://github.com/KarylDAZE/Maa-HBR) v0.5.9 版本修改而来，在保留原有功能的同时，加入了自定义战斗逻辑（排轴）的功能。使用本软件（即 HBRWithMaa），你可以在战斗时使用自己预先设定的轴，而不是 AUTO。
 
 ## 使用
 
-推荐使用 `MFAAvalonia.exe`，带有 GUI 界面，**需要管理员身份运行**。
+1. 主程序
 
-对于需要使用命令行的用户，管理员身份运行 `MaaPiCli.exe`。
+   推荐使用 `MFAAvalonia.exe`，带有 GUI 界面，**需要管理员身份运行**。
+
+   对于需要使用命令行的用户，管理员身份运行 `MaaPiCli.exe`。
+
+2. 其它工具
+
+   解压 `\tools` 下的 `tools.zip` 压缩包，其中的两个 `exe` 之后会用到。
+
+3. 作为 `Maa-HBR` 的插件
+
+   下载 ，解压后将所有文件复制到 `Maa-HBR` 的根目录下，之后运行 `Maa-HBR` 即可。
+
+   另：如果弹出版本更新，则需要修改 `interface.json` 中的第三行 `version` 字段，将版本号替换为你下载的版本即可。由于本项目是基于 v0.5.9 版本修改而来，因此 `version` 默认也为此版本号。
 
 ## 分辨率设置注意事项
 
