@@ -18,7 +18,7 @@
 
 3. 作为 `Maa-HBR` 的插件
 
-   下载 ，解压后将所有文件复制到 `Maa-HBR` 的根目录下，之后运行 `Maa-HBR` 即可。
+   下载 [plugin.zip](https://github.com/bowenOne580/HBRWithMaa/blob/main/plugin.zip)，解压后将所有文件复制到 `Maa-HBR` 的根目录下，之后运行 `Maa-HBR` 即可。
 
    另：如果弹出版本更新，则需要修改 `interface.json` 中的第三行 `version` 字段，将版本号替换为你下载的版本即可。由于本项目是基于 v0.5.9 版本修改而来，因此 `version` 默认也为此版本号。
 
@@ -35,6 +35,8 @@
 3. 使用截图工具（如 QQ 截图）验证窗口长宽是否和游戏内分辨率相同。
 
 ## 排轴规范
+
+**目前尚不支持使用 OD 和使用 4 个及以上的技能！**
 
 请将轴写入 tools 目录下的 `Line.txt` 中。
 
