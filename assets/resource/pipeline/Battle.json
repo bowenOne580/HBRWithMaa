@@ -306,7 +306,17 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": "消耗体力石",
-        "next": "APOK"
+        "next": "RecoverOK"
+    },
+    "RecoverOK": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "体力已回复",
+        "target": [605,530,5,5],
+        "next": [
+            "RecoverOK",
+            "APOK"
+        ]
     },
     "hasSelectedUnit": {
         "recognition": "OCR",
