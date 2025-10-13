@@ -1,0 +1,195 @@
+{
+	"ODTest": {
+		"recognition": "TemplateMatch",
+		"roi" : [1050,515,213,155],
+		"template": ["Action.png"],
+		"target": [1150,580,10,10],
+		"post_delay": 3000,
+		"next": "ODTest_T1Step1"
+	},
+	"ODTest_T1Step1": {
+		"next": "ODTest_T1Step2",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,516,213,155],
+		"template": ["Action.png"],
+		"pre_delay": 3000,
+		"target": [1150,580,10,10]
+	},
+	"ODTest_T1Step2": {
+		"next": "ODTest_T2Step1",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,515,213,155],
+		"template": ["Action.png"],
+		"action": "Click",
+		"target": [1150,580,10,10],
+		"post_delay": 3000
+	},
+	"ODTest_T2Step1": {
+		"next": "ODTest_T2Step2",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,516,213,155],
+		"template": ["Action.png"],
+		"pre_delay": 3000,
+		"target": [1150,580,10,10]
+	},
+	"ODTest_T2Step2": {
+		"next": "ODTest_T3Step1",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,515,213,155],
+		"template": ["Action.png"],
+		"action": "Click",
+		"target": [1150,580,10,10],
+		"post_delay": 3000
+	},
+	"ODTest_T3Step1": {
+		"next": "ODTest_T3Step2",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,516,213,155],
+		"template": ["Action.png"],
+		"pre_delay": 3000,
+		"target": [1150,580,10,10]
+	},
+	"ODTest_T3Step2": {
+		"next": "ODTest_T3Step3",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [500,588,24,22]
+	},
+	"ODTest_T3Step3": {
+		"next": "ODTest_T3Step4",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,175,41,32]
+	},
+	"ODTest_T3Step4": {
+		"next": "ODTest_T4Step1",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,515,213,155],
+		"template": ["Action.png"],
+		"action": "Click",
+		"target": [1150,580,10,10],
+		"post_delay": 3000
+	},
+	"ODTest_T4Step1": {
+		"next": "ODTest_T4Step2",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,516,213,155],
+		"template": ["Action.png"],
+		"pre_delay": 3000,
+		"target": [1150,580,10,10]
+	},
+	"ODTest_T4Step2": {
+		"next": "ODTest_T4Step3",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,516,213,155],
+		"template": ["Action.png"],
+		"target": [1170,50,10,10],
+		"action": "Click"
+		,"post_delay": 300
+	},
+	"ODTest_T4Step3": {
+		"next": "ODTest_T4Step4",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,516,213,155],
+		"template": ["Action.png"],
+		"pre_delay": 3000,
+		"target": [1150,580,10,10]
+	},
+	"ODTest_T4Step4": {
+		"next": "ODTest_T4Step5",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [500,588,24,22]
+	},
+	"ODTest_T4Step5": {
+		"next": "ODTest_T4Step6",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,590,21,22]
+	},
+	"ODTest_T4Step6": {
+		"next": "ODTest_T4Step7",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [100,585,29,28]
+	},
+	"ODTest_T4Step7": {
+		"next": "ODTest_T4Step8",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,175,41,32]
+	},
+	"ODTest_T4Step8": {
+		"next": "ODTest_T4Step9",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [300,589,28,23]
+	},
+	"ODTest_T4Step9": {
+		"next": "ODTest_T4Step10",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [626,282,65,40]
+	},
+	"ODTest_T4Step10": {
+		"next": "ODTest_T4Step11",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [500,588,24,22]
+	},
+	"ODTest_T4Step11": {
+		"next": "ODTest_T4Step12",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,175,41,32]
+	},
+	"ODTest_T4Step12": {
+		"next": "ODTest_T4Step13",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,515,213,155],
+		"template": ["Action.png"],
+		"action": "Click",
+		"target": [1150,580,10,10],
+		"post_delay": 3000
+	},
+	"ODTest_T4Step13": {
+		"next": "ODTest_T4Step14",
+		"recognition": "TemplateMatch",
+		"roi" : [1050,516,213,155],
+		"template": ["Action.png"],
+		"pre_delay": 3000,
+		"target": [1150,580,10,10]
+	},
+	"ODTest_T4Step14": {
+		"next": "ODTest_T4Step15",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [500,588,24,22]
+	},
+	"ODTest_T4Step15": {
+		"next": "ODTest_T4Step16",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [670,590,21,22]
+	},
+	"ODTest_T4Step16": {
+		"next": "ODTest_T4Step17",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [100,585,29,28]
+	},
+	"ODTest_T4Step17": {
+		"next": "ODTest_T4Step18",
+		"action": "Click",
+		"post_delay": 600,
+		"target": [626,282,65,40]
+	},
+	"ODTest_T4Step18": {
+		"recognition": "TemplateMatch",
+		"roi" : [1050,515,213,155],
+		"template": ["Action.png"],
+		"action": "Click",
+		"target": [1150,580,10,10],
+		"post_delay": 3000
+	}
+}
