@@ -48,7 +48,7 @@
 
 **接下来的所有行**，每行 6 个数，填写技能编号，用 `,` 隔开（注意每行最后需要以 `,` 结尾），技能为 -1 代表后排，技能为 0 代表普攻，其它技能对应技能槽，目前仅支持前三个技能槽，可以看作一个人最多用三个不同的技能。
 
-第二行的总回合数**不包含** OD，在需要发动 OD 时，另起一行，`OD x y`，表示发动有 $x$ 回合的 OD，并且是前置（$0$，表示在上一行的回合中发动）或后置（$1$，表示在下一行的回合开始时发动）。接下来的 $x$ 行写 OD 的轴。
+第二行的总回合数**不包含** OD，在需要发动 OD 时，另起一行，`OD x y`，表示发动有 $x$ 回合的 OD，并且是前置（0，表示在上一行的回合中发动）或后置（1，表示在下一行的回合开始时发动）。接下来的 $x$ 行写 OD 的轴。
 
 技能编号后面可以附加信息：
 
@@ -62,4 +62,8 @@
 
 在写好 `Line.txt` 后，运行 tools 目录下的 `gen.exe` 生成指定名称的 `json` 文件，将文件替换 `resource\pipeline` 下的同名文件即可。
 
-示例：[驱动光球异侦Y.txt](https://github.com/bowenOne580/HBRWithMaa/blob/main/extra/驱动光球异侦Y.txt)
+示例：
+
+[驱动光球异侦Y.txt](https://github.com/bowenOne580/HBRWithMaa/blob/main/extra/驱动光球异侦Y.txt)
+
+[4T1OD测试轴](https://github.com/bowenOne580/HBRWithMaa/blob/main/extra/测试OD轴.txt)
