@@ -30,6 +30,8 @@
         "replace": [["强化1养成","强化/养成"],
             ["强化养成","强化/养成"]
         ],
+        "order_by": "Vertical",
+        "index": -1,
         "post_wait_freezes": 500,
         "next": [
             "SelectStageType",
@@ -135,6 +137,7 @@
     "SelectOrbBoss": {
         "recognition": "OCR",
         "action": "Click",
+        "expected": "空无Y",
         "post_wait_freezes": 500,
         "interrupt": "AddOrbLevel",
         "next": "HasSelectedOrbLevel"
@@ -374,6 +377,7 @@
             "ClickScreen",
             "EndFight",
             "GiveUp",
+            "ExitWindow",
             "GoBack",
             "HomepageButton",
             "SkipTimeLimitShop"

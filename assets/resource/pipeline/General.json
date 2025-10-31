@@ -54,6 +54,10 @@
     "AtHomepage": {
         "recognition": "OCR",
         "expected": "邀请好友",
+        "interrupt": [
+            "ExitWindow",
+            "GoBack"
+        ],
         "next": [
             "SkipHomepageDialogue",
             "EndHomepage"
