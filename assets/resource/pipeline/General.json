@@ -66,7 +66,8 @@
     "GoBack": {
         "recognition": "TemplateMatch",
         "template": [
-            "GoBack__27_22_50_55__0_0_127_127.png"
+            "GoBack__27_22_50_55__0_0_127_127.png",
+            "TopRightGoBack__1121_103_69_67__1071_53_169_167.png"
         ],
         "roi": [
             0,

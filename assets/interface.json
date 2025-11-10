@@ -1,8 +1,8 @@
 {
     "name": "HBRWithMaa",
-    "version": "v0.2.1",
-    "mirrorchyan_rid":  "null",
-    "mirrorchyan_multiplatform":  false,
+    "version": "v0.4.1",
+    "mirrorchyan_rid": "null",
+    "mirrorchyan_multiplatform": false,
     "url": "https://github.com/bowenOne580/HBRWithMaa",
     "custom_title": "HBRWithMaa",
     "default_controller": "win32",
@@ -33,7 +33,7 @@
     "task": [
         {
             "name": "自定义任务",
-            "entry": "AddAP",
+            "entry": "Sally_Tmp",
             "check": true
         },
         {
@@ -269,7 +269,7 @@
                     "interrupt": "GoBack",
                     "next": "StartArtsBattle"
                 },
-                "pipeline_override":{
+                "pipeline_override": {
                     "Sally": {
                         "interrupt": [
                             "OK",
@@ -302,14 +302,33 @@
                     "name": "AUTO"
                 },
                 {
+                    "name": "一期光球(OrbB1All)",
+                    "pipeline_override": {
+                        "Sally": {
+                            "interrupt": [
+                                "OK",
+                                "OrbB1All",
+                                "ClickScreen",
+                                "EndFight",
+                                "GiveUp",
+                                "ExitWindow",
+                                "GoBack",
+                                "HomepageButton",
+                                "SkipTimeLimitShop"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "驱动光球异侦Y(OrbB1Y)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
                                 "OrbB1Y",
                                 "ClickScreen",
                                 "EndFight",
+                                "ExitWindow",
                                 "GiveUp",
                                 "GoBack",
                                 "HomepageButton",
@@ -320,7 +339,7 @@
                 },
                 {
                     "name": "防护光球异侦W(OrbB1W)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -328,6 +347,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -337,7 +357,7 @@
                 },
                 {
                     "name": "复活光球异侦B(OrbB1B)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -345,6 +365,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -354,7 +375,7 @@
                 },
                 {
                     "name": "填充光球空无B(OrbB2B)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -362,6 +383,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -371,7 +393,7 @@
                 },
                 {
                     "name": "群山重锤(Gem1)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -379,6 +401,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -388,7 +411,7 @@
                 },
                 {
                     "name": "冰雹马(Gem2)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -396,6 +419,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -405,7 +429,7 @@
                 },
                 {
                     "name": "石柱像T(Gem3)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -413,6 +437,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -422,7 +447,7 @@
                 },
                 {
                     "name": "坚甲皓珠(Gem4)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -430,6 +455,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -439,7 +465,7 @@
                 },
                 {
                     "name": "掩面死神O(Gem5)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -447,6 +473,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -456,7 +483,7 @@
                 },
                 {
                     "name": "阿拉克尼巨蛛A(Gem6)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -464,6 +491,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -473,7 +501,7 @@
                 },
                 {
                     "name": "火队(Fire)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -481,6 +509,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -490,7 +519,7 @@
                 },
                 {
                     "name": "光队(Light)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -498,6 +527,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -507,7 +537,7 @@
                 },
                 {
                     "name": "雷队(Raiden)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -515,6 +545,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -524,7 +555,7 @@
                 },
                 {
                     "name": "冰队(Ice)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -532,6 +563,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -541,7 +573,7 @@
                 },
                 {
                     "name": "暗队(Dark)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -549,6 +581,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -558,7 +591,7 @@
                 },
                 {
                     "name": "无队(Norm)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -566,6 +599,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -575,7 +609,7 @@
                 },
                 {
                     "name": "轴1(Line1)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -583,6 +617,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -592,7 +627,7 @@
                 },
                 {
                     "name": "轴2(Line2)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -600,6 +635,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"
@@ -609,7 +645,7 @@
                 },
                 {
                     "name": "轴3(Line3)",
-                    "pipeline_override":{
+                    "pipeline_override": {
                         "Sally": {
                             "interrupt": [
                                 "OK",
@@ -617,6 +653,7 @@
                                 "ClickScreen",
                                 "EndFight",
                                 "GiveUp",
+                                "ExitWindow",
                                 "GoBack",
                                 "HomepageButton",
                                 "SkipTimeLimitShop"

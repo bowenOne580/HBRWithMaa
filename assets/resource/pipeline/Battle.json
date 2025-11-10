@@ -373,7 +373,7 @@
         "post_wait_freezes": 1000,
         "interrupt": [
             "OK",
-            "Auto",
+            "OrbB1B",
             "ClickScreen",
             "EndFight",
             "GiveUp",
