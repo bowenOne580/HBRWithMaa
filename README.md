@@ -1,5 +1,9 @@
 # HBRWithMaa
 
+## 注意
+
+**本库已不再维护，仅适用于旧版本HBR客户端，新版本由于界面调整，无法正确识别，功能会有很大的异常，请寻找其它的库。**
+
 ## 介绍
 
 本项目的大部分 `json` 文件是基于 [KarylDAZE/Maa-HBR: heaven burns red 炽焰天穹 自动化脚本](https://github.com/KarylDAZE/Maa-HBR) v0.5.9 版本修改而来，在保留原有功能的同时，加入了自定义战斗逻辑（排轴）的功能。使用本软件（即 HBRWithMaa），你可以在战斗时使用自己预先设定的轴，而不是 AUTO。
